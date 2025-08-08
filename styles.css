@@ -1,0 +1,17 @@
+
+body{font-family:Arial, Helvetica, sans-serif; background:#f3f4f6; margin:0; padding:20px}
+.container{max-width:900px; margin:0 auto; background:white; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+h1{margin:0 0 12px 0; font-size:20px}
+.controls{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px}
+.controls label{font-size:13px}
+.controls select{margin-left:6px; padding:6px}
+.controls button{padding:8px 12px; border-radius:6px; border:1px solid #cbd5e1; background:#fff; cursor:pointer}
+.quiz-area{margin-top:12px}
+.question-card{border:1px solid #e6e6e6; padding:12px; border-radius:6px; background:#fff; margin-bottom:8px}
+.options{display:flex; flex-direction:column; gap:8px; margin-top:8px}
+.option-btn{padding:8px; border-radius:6px; border:1px solid #e2e8f0; text-align:left; background:#fff; cursor:pointer}
+.option-btn.correct{background:#d1fae5}
+.option-btn.wrong{background:#fee2e2}
+.results-area{margin-top:12px}
+.footer{margin-top:16px; font-size:13px; color:#555}
+.small{font-size:12px; color:#666}

@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EpiBio Quiz — Offline + Online</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>EpiBio Quiz — Epidemiology & Biostatistics</h1>
+    <div class="controls">
+      <label>Mode:
+        <select id="modeSelect">
+          <option value="auto">Auto (online if available)</option>
+          <option value="online">Online (AI)</option>
+          <option value="offline">Offline (local)</option>
+        </select>
+      </label>
+      <label>Concept:
+        <select id="conceptSelect">
+          <option>All</option>
+        </select>
+      </label>
+      <label>Difficulty:
+        <select id="difficultySelect">
+          <option>All</option>
+          <option>Easy</option>
+          <option>Medium</option>
+          <option>Hard</option>
+        </select>
+      </label>
+      <button id="startBtn">Start 10-question Quiz</button>
+      <button id="getQuestionBtn" style="display:none">Get AI Question (online)</button>
+    </div>
+    <div id="quizArea" class="quiz-area"></div>
+    <div id="resultsArea" class="results-area"></div>
+    <div class="footer">Works offline using bundled questions. Online AI requires a separate backend/API.</div>
+  </div>
+
+  <script src="offline-questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
