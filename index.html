@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Public Health Quiz</title>
+    <!-- PWA Manifest Link -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Theme Color for PWA -->
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="status-bar">
+        <div id="scoreDisplay" class="status-display"></div>
+        <div id="timerDisplay" class="status-display"></div>
+    </div>
+
+    <!-- Page 1: Mode Selection -->
+    <div id="pageModeSelect" class="page active">
+        <div class="container">
+            <h1>Public Health Quiz</h1>
+            <p style="text-align:center;">Welcome Damilola, what would you like to do today?</p>
+
+            <button id="showPracticeOptionsBtn" class="button main-mode-btn">Practice Mode</button>
+            <button id="startExamBtn" class="button main-mode-btn secondary">Exam Mode</button>
+
+            <div id="practiceOptionsContainer" style="display: none;">
+                <hr style="margin: 2rem 0; border: 1px solid var(--light-bg);">
+                <h3>Practice Options</h3>
+                <label for="topic"><strong>Choose a topic:</strong></label>
+                <select id="topic"></select>
+
+                <div class="settings-grid">
+                    <label for="numQuestions">Questions:</label>
+                    <input type="number" id="numQuestions" value="10" min="5" max="1000">
+
+                    <label for="timeLimit">Time (minutes):</label>
+                    <input type="number" id="timeLimit" value="10" min="1">
+                </div>
+
+                <button id="startPracticeBtn" class="button">Start Practice</button>
+                <button id="mainMenuBtnFromPractice" class="button secondary" style="margin-top: 1rem;">Back to Main
+                    Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Quiz Question -->
+    <div id="pageQuiz" class="page">
+        <div class="container">
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <h2 id="quizHeader"></h2>
+            <div id="questionText"></div>
+            <img id="questionImage" class="question-image" src="" alt="Question image" style="display:none;">
+            <div class="options-grid" id="optionsContainer"></div>
+            <div class="quiz-nav">
+                <button id="prevQuestionBtn" class="button secondary">Previous</button>
+                <button id="nextQuestionBtn" class="button">Next</button>
+            </div>
+            <button id="mainMenuBtnQuiz" class="button secondary" style="margin-top: 1rem;">Return to Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Page 3: Feedback -->
+    <div id="pageFeedback" class="page">
+        <div class="container feedback-view">
+            <h2 id="feedbackHeader"></h2>
+            <div id="feedbackQuestionText"></div>
+            <img id="feedbackImage" class="question-image" src="" alt="Question image" style="display:none;">
+            <div class="options-grid" id="feedbackOptionsContainer"></div>
+            <div class="feedback-explanation" id="feedbackExplanation"></div>
+            <div class="quiz-nav">
+                <button id="prevFeedbackBtn" class="button secondary">Previous</button>
+                <button id="nextFeedbackBtn" class="button">Next</button>
+            </div>
+            <button id="mainMenuBtnFeedback" class="button secondary" style="margin-top: 1rem;">Return to Main
+                Menu</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Completion -->
+    <div id="pageComplete" class="page">
+        <div class="container">
+            <h2 id="completionTitle"></h2>
+            <p id="completionMessage"></p>
+            <div id="completionActions"></div>
+            <div id="analyticsContainer" class="analytics-section"></div>
+        </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div id="imageModal" class="modal">
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+    <script src="service-worker.js"></script>
+</body>
+
+</html>
